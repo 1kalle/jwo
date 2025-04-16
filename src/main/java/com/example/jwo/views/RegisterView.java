@@ -27,6 +27,8 @@ public class RegisterView extends VerticalLayout {
 
         H1 title = new H1("Rekisteröidy");
 
+        add(new H1("KÄYTTÄJÄN ROOLI ON ADMIN // VOIT TESTATA USER KOMMENTOIMALLA setRol... kohdan"));
+
         TextField usernameField = new TextField("Käyttäjänimi");
         PasswordField passwordField = new PasswordField("Salasana");
 
@@ -34,8 +36,8 @@ public class RegisterView extends VerticalLayout {
             User user = new User();
             user.setUsername(usernameField.getValue());
             user.setPassword(passwordEncoder.encode(passwordField.getValue()));
-            //user.setRole("ADMIN");
-            user.setRole("USER");
+            user.setRole("ADMIN");
+            //user.setRole("USER");
 
             try{
                 userRepository.save(user);
