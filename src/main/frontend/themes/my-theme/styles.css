@@ -1,0 +1,74 @@
+/* Override white backgrounds and text colors globally */
+:host,
+[theme~="lumo"],
+html,
+body {
+    /* Replace white background with gray */
+    background-color: #d3d3d3 !important; /* Light gray; adjust as needed */
+    color: #333333 !important; /* Dark gray for text to ensure contrast */
+}
+
+/* Target specific elements with white backgrounds */
+vaadin-app-layout,
+vaadin-vertical-layout,
+vaadin-horizontal-layout,
+vaadin-form-layout,
+vaadin-text-field,
+vaadin-number-field,
+vaadin-button,
+vaadin-login-form,
+vaadin-grid {
+    background-color: #d3d3d3 !important; /* Light gray */
+}
+
+/* Target white text colors */
+h1,
+h2,
+h3,
+span,
+vaadin-button,
+vaadin-text-field::part(input-field),
+vaadin-number-field::part(input-field),
+vaadin-login-form::part(input-field) {
+    color: #333333 !important; /* Dark gray for readability */
+}
+
+/* Override Lumo variables for white colors */
+:root {
+    --lumo-base-color: #d3d3d3; /* Replace white base color */
+    --lumo-primary-text-color: #333333; /* Ensure text isn’t white */
+    --lumo-body-text-color: #333333;
+    --lumo-secondary-text-color: #555555;
+    --lumo-contrast-10pct: #c0c0c0; /* Slightly darker gray for subtle contrasts */
+    --lumo-contrast-20pct: #b0b0b0;
+}
+
+/* Ensure MainLayout navbar uses gray */
+vaadin-app-layout::part(navbar) {
+    background-color: #d3d3d3 !important; /* Match global gray */
+    border-bottom: 1px solid #a9a9a9; /* Darker gray border */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Buttons */
+vaadin-button {
+    background-color: #c0c0c0 !important; /* Medium gray for buttons */
+    color: #333333 !important;
+}
+
+/* Input fields */
+vaadin-text-field::part(input-field),
+vaadin-number-field::part(input-field) {
+    background-color: #e0e0e0 !important; /* Slightly lighter gray for inputs */
+    color: #333333 !important;
+}
+
+/* Ensure no white remains in specific components */
+.login-view,
+.register-view,
+.add-view,
+.welcome-view {
+    background-color: #d3d3d3 !important;
+}
+
+
